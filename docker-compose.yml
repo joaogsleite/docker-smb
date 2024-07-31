@@ -1,0 +1,12 @@
+services:
+  smb:
+    image: joaogsleite/smb:4.18.9
+    build: .
+    ports:
+      - 139:139
+      - 445:445
+    environment:
+      SMB_USER: user
+      SMB_PASSWORD: password
+    volumes:
+      - ./volumes/share:/media/share
